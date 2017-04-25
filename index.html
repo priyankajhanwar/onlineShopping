@@ -1,47 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="store">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script type="text/javascript" src="gemsModule.js"></script>
+<!-- <script type="text/javascript" src="app.js"></script> -->
+<!-- <script type="text/javascript" src="storeService.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="base.css">
-<body class="container">
-	<div ng-app="store"  ng-controller="StoreController as store">
- 	<p class="well">
- 		<img src="shopping-bag.png"  height="42" width="42"/><b>Shopping Hub for</b> <span class="gemsColor">Gems</span>
- 	</p>
+<link rel="stylesheet" href="css/base.css">
+<body class="background container">
+
+	<p class="well">
+		<img src="img/shopping-bag.png"  height="42" width="42"/><b>Shopping Hub for</b> <span class="gemsColor">Gems</span>
+	</p>
 	<br/>
-	<div class="welcomeText">Welcome to online store of gems<br/>
-		Please select the produts of your choice to the cart<br/>
-		When you are done, click to cart to review your order and checkout
-	</div>
-	<br/>
-	<p>Search : <input type="text" ng-model="nameOfItem" placeholder="Enter item name"></p>
-	<br/>
-	<table class="table table-striped">
-  		<thead>
-    		<tr class="well">
-      
-    		</tr>
-  		</thead>
-  		<tbody>
-  		<tr>
-  			<th class="glyphicon glyphicon-shopping-cart">{{store.gemsCount}}</th>
-  		</tr>
-    	<tr ng-repeat="product in store.products | orderBy : 'name' | filter : nameOfItem">
-      		<th scope="row"></th>
-      			<td class="col-lg-3"><img ng-src="{{product.image}}" /></td>
-      			<td class="col-lg-2">{{product.name}}</td>
-      			<td class="col-lg-5">{{product.description}}</td>
-      			<td class="col-lg-1">{{product.price | currency}}</td>
-      			<!-- <td ><button ng-click="gemsPurchased()">add to cart</button></td>
-     				 <td><a href="" ng-click="cart.addItem(product.sku, product.name, product.price, 1)">
-                		add to cart
-            		</a></td> -->
-      			<td class="col-lg-1"><a href="" ng-click="store.gemsPurchased()">add to cart</a></td>
-    	</tr>
-  		</tbody>
- 	</table>
-	</div>
+	<ng-view></ng-view>
+
 </body>
 </html>

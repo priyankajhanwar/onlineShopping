@@ -1,0 +1,34 @@
+<div>
+
+  <div class="welcomeText">Welcome to online store of gems<br/>
+   Please select the produts of your choice to the cart<br/>
+   When you are done, click to cart to review your order and checkout
+ </div>
+ <br/>
+ <p>Search : <input type="text" ng-model="nameOfItem" placeholder="Enter item name"></p>
+ <br/>
+ <table class="welcomeText table ">
+  <thead>
+    <tr class="well">
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     <th class="place glyphicon glyphicon-shopping-cart">&nbsp;
+       <a href="#/cart"><b>{{gemsCount}}</b>&nbsp;Gems,  <b>{{getTotalPrice() | currency}}</b></a>
+     </th>
+     <!-- {{rate}}{{productPurchased}} -->
+   </tr>
+   <tr ng-repeat="product in store.products | orderBy : 'name' | filter : nameOfItem ">
+    <th scope="row"></th>
+    <td class="col-lg-3"><img ng-src="{{product.image}}" /></td>
+    <td class="col-lg-5"><div><b>{{product.name}}</b></div><div>{{product.description}}</div></td>
+    <td class="col-lg-2">{{product.price | currency}}</td>
+    
+    <td class="col-lg-2"><a href="" ng-click="addToCart(product.name,product.price);">add to cart</a></td>
+    
+  </tr>
+</tbody>
+</table>
+</div>

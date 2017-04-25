@@ -1,0 +1,38 @@
+<div>
+	<div class="welcomeText">Thanks for shopping<br/>
+
+		This is your shopping cart. Here you can edit the items, 
+		go back to the store, clear the cart, or check out.<br/>
+
+	</div>
+	<button><a href="#/">back to store</a></button>
+	<button ng-click="">clear cart</button>
+	<table class="table table-bordered">
+
+		<!-- header -->
+		<tbody><tr class="well">
+			<td><b>Item</b></td>
+			<td class="tdCenter"><b>Quantity</b></td>
+			<td class="tdRight"><b>Price</b></td>
+			<td></td>
+		</tr>
+		<tr ng-repeat="gems in store.gemsPurchased">
+			<!-- ng-repeat="item in cart.items | orderBy:'name'" class="ng-scope"> -->
+			<td >{{gems.gemsName}}</td>
+			<td class="tdCenter">
+			</td>
+			<td class="tdRight">{{gems.gemsPrice}}</td>
+			<td class="tdCenter" title="remove from cart">
+				<a href="" >
+					<i class="icon-remove"></i>
+				</a>
+			</td>
+		</tr>
+		<tr class="well">
+			<td><b>Total</b></td>
+			<td class="tdCenter"><b></b></td>
+			<td class="tdRight"><b></b></td>
+			<td></td>
+		</tr>
+	</tbody></table>
+</div>
