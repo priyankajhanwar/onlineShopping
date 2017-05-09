@@ -16,12 +16,12 @@
 			<td class="tdRight"><b>Price</b></td>
 			<td></td>
 		</tr>
-		<tr ng-repeat="gems in store.gemsPurchased">
+		<tr ng-repeat="element in cartCtrl.elements"> 
 			<!-- ng-repeat="item in cart.items | orderBy:'name'" class="ng-scope"> -->
-			<td >{{gems.gemsName}}</td>
+			<td >{{element.gemsName}}</td>
 			<td class="tdCenter">
 			</td>
-			<td class="tdRight">{{gems.gemsPrice}}</td>
+			<td class="tdRight">{{element.gemsPrice}}</td>
 			<td class="tdCenter" title="remove from cart">
 				<a href="" >
 					<i class="icon-remove"></i>
